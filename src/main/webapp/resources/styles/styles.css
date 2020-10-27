@@ -1,0 +1,16 @@
+html {
+
+    background: #323232;
+   	font-family: "Open Sans","Helvetica Neue",sans-serif;
+	color: #dedede
+}
+
+
+.pf,
+.pf * {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+

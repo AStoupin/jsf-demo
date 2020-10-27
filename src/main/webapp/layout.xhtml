@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui">
+<f:view>
+
+	<h:head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" href="icon.png" />
+		<h:outputStylesheet library="styles" name="styles.css" />
+		<title><ui:insert name="title" /></title>
+
+
+	</h:head>
+	<h:body>
+
+		<p:ajaxStatus onstart="PF('statusDialog').show()"
+			onsuccess="PF('statusDialog').hide()" delay="500" />
+
+		<p:dialog widgetVar="statusDialog" modal="true" draggable="false"
+			closable="false" resizable="false" showHeader="false">
+			<h:outputText value="In progress..." />
+		</p:dialog>
+
+
+
+		<h:form>
+
+			<p:toolbar>
+				<f:facet name="left">
+					<p:button href="#{facesContext.externalContext.request.contextPath}/" value="Hello" icon="pi pi-star" style="margin-right:20px;">
+
+					</p:button>
+
+					<p:button href="#{facesContext.externalContext.request.contextPath}/cars" value="Cars" icon="pi pi-star" style="margin-right:20px;">
+
+					</p:button>
+
+
+				</f:facet>
+
+
+			</p:toolbar>
+
+		</h:form>
+
+
+
+		<ui:insert name="content" />
+	</h:body>
+</f:view>
+</html>
